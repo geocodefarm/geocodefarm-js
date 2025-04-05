@@ -1,0 +1,22 @@
+<script src="https://github.com/geocodefarm/geocodefarm-js/raw/refs/heads/main/geocodefarm.js"></script>
+<script>
+    const geocode = new GeocodeFarm('your_api_key_here');
+
+    // Example: Forward geocoding
+    geocode.forward('1600 Pennsylvania Ave, Washington, DC').then(response => {
+        if (response.success) {
+            console.log('Coordinates:', response.lat, response.lon);
+        } else {
+            console.error('Error:', response.error);
+        }
+    });
+
+    // Example: Reverse geocoding
+    geocode.reverse(38.8977, -77.0365).then(response => {
+        if (response.success) {
+            console.log('Address:', response.full_address);
+        } else {
+            console.error('Error:', response.error);
+        }
+    });
+</script>
